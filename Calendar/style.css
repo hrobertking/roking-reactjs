@@ -1,0 +1,63 @@
+/**
+ * @author Robert King <hrobertking@cathmhaol.com>
+ * @description CSS styles for the Calendar object. The Calendar object using these style
+ * rules will be ~300px wide
+ */
+
+table.calendar {
+  border: 5px solid transparent;
+  border-collapse: collapse;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: default;
+  margin-top: .625em;
+}
+table.calendar thead > tr > th {
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+table.calendar thead > tr.control > th:first-of-type {
+  padding-left: 1em;
+}
+table.calendar thead > tr.control > th:last-of-type {
+  padding-right: 1em;
+}
+table.calendar tfoot > tr > td {
+  padding: 1em;
+}
+table.calendar thead .control {
+  border-bottom: 1px solid rgb(184, 219, 112);
+}
+table.calendar tfoot tr {
+  border-top: 1px solid rgb(184, 219, 112);
+}
+table.calendar thead {
+  font-weight: bold;
+  overflow: auto;
+}
+table.calendar thead td,
+table.calendar tbody td {
+  text-align: center;
+  vertical-align: middle;
+}
+table.calendar tbody td {
+  height: 2.5em;
+  width: 2.5em;
+}
+table.calendar tbody td:active,
+table.calendar tbody td:focus,
+table.calendar tbody td:hover {
+  background-color: rgb(209, 244, 137);
+  color: rgb(0, 0, 0);
+}
+table.calendar tbody td.before,
+table.calendar tbody td.after {
+  background-color: rgb(255, 255, 214);
+  border-radius: 0;
+  color: rgb(0, 0, 0);
+  opacity: 0.5;
+}
+table.calendar tbody td.selected {
+  background-color: rgb(107, 142, 35);
+  color: rgb(255, 255, 255);
+}

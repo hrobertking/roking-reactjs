@@ -1,0 +1,54 @@
+ul.menu :focus {
+  outline: 0.1rem dotted rgba(0, 0, 0, .5);
+  outline-offset: 0.125rem;
+}
+ul.menu a,
+ul.menu button {
+  margin: 0.25rem;
+}
+
+ul.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul.menu li {
+  margin: 0;
+  padding: 0;
+}
+ul.menu li.submenu > ul {
+  list-style-type: none;
+  margin: 0 0 0 1rem;
+  padding: 0;
+}
+
+li.menuitem > button,
+li.submenu > button {
+  background: transparent;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: initial;
+  text-align: left;
+}
+li.submenu > button + ul {
+  margin: auto;
+}
+
+li.submenu > button[aria-expanded]::before {
+  content: "▽";
+  display: inline-block;
+}
+li.submenu > button[aria-expanded="false"]::before {
+  transform: rotate(-90deg);
+}
+li.submenu > button[aria-expanded="false"] + ul {
+  display: none;
+}
+li.submenu > button[aria-expanded="true"] + ul {
+  display: block;
+}
+
+ul.menu.bar {
+  display: flex;
+}
+

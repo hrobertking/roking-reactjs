@@ -1,0 +1,50 @@
+ol[role="tree"] {
+  margin: 0;
+  padding: 0;
+}
+ol[role="tree"] [data-expandable="false"]:active,
+ol[role="tree"] [data-expandable="false"]:focus {
+  outline: none;
+}
+ol[role="tree"] :not(ol)[data-expandable="false"]:active,
+ol[role="tree"] :not(ol)[data-expandable="false"]:focus,
+ol[role="tree"] :not(ol):not([data-expandable]):active,
+ol[role="tree"] :not(ol):not([data-expandable]):focus {
+  outline: 1px dotted lightgray;
+}
+ol[role="tree"][aria-expanded="false"],
+ol[role="tree"] ol[role="group"][aria-expanded="false"] {
+  height: 1.2rem;
+  overflow: hidden;
+}
+ol[role="tree"] li[role="treeitem"] {
+  list-style-type: none;
+  line-height: 1.2rem;
+  overflow: visible;
+  position: relative;
+}
+ol[role="tree"] > li::before,
+ol[role="tree"] li[role="treeitem"] > ol[role="group"] > li::before {
+  border: 1px solid transparent;
+  border-radius: 0.1rem;
+  content: " ";
+  display: inline-block;
+  font-size: 1rem;
+  height: 1rem;
+  line-height: 0.8rem;
+  margin-right: 0.2rem;
+  text-align: center;
+  width: 1rem;
+}
+ol[role="tree"][aria-expanded] > li:first-of-type:not(:last-of-type)::before,
+ol[role="tree"] li[role="treeitem"] > ol[role="group"][aria-expanded] > li:first-of-type:not(:last-of-type)::before {
+  border-color: black;
+}
+ol[role="tree"][aria-expanded="false"] > li:first-of-type:not(:last-of-type)::before,
+ol[role="tree"] li[role="treeitem"] > ol[role="group"][aria-expanded="false"] > li:first-of-type:not(:last-of-type)::before {
+  content: "+";
+}
+ol[role="tree"][aria-expanded="true"] > li:first-of-type:not(:last-of-type)::before,
+ol[role="tree"] li[role="treeitem"] > ol[role="group"][aria-expanded="true"] > li:first-of-type:not(:last-of-type)::before {
+  content: "-";
+}

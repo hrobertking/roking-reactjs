@@ -1,0 +1,49 @@
+.tooltip {
+  display: flex;
+  flex: 1;
+}
+.tooltip > [role][aria-expanded="false"] {
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  position: absolute;
+}
+.tooltip > button {
+  align-items: center;
+  border-radius: 50%;
+  box-sizing: content-box;
+  line-height: 1.2rem;
+  height: 1.2rem;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 1.2rem;
+}
+.tooltip > [role] {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  margin-left: 0.25rem;
+}
+.tooltip > [role]::before {
+  /* the `border-right` color should match the
+   * `background-color` of `.tooltip > [role="status"] > *`
+   * below
+   */
+  border-bottom: 0.3rem solid transparent;
+  border-right: 0.3rem solid green;
+  border-top: 0.3rem solid transparent;
+  content: '';
+  flex: 0;
+  height: 0;
+  margin-top: 0.4rem;
+  width: 0;
+}
+.tooltip > [role] > .container {
+  background-color: green;
+  color: white;
+  border-radius: 0.25rem;
+  padding: 0.1rem 0.25rem;
+}
+.tooltip > [role] > .container :first-child {
+  margin-top: 0;
+}

@@ -1,0 +1,64 @@
+ol.journey > li {
+  display: inline-block;
+  margin-right: 0.3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: auto;
+}
+ol.journey > li::after {
+  content: '▶';
+  margin: 0 0.5rem 0 0.5rem;
+}
+
+ol.journey > li:last-of-type {
+  margin-right: 0;
+}
+ol.journey > li:last-of-type::after {
+  display: none;
+}
+
+/* selector for items before (to the left of) current */
+ol.journey > li:not([aria-current]) {
+  background-color: #fff;
+  color: #aaa;
+}
+
+/* selector for aria-current */
+ol.journey > li[aria-current] {
+  background-color: #fff;
+  color: #666;
+  font-weight: bold;
+}
+
+/* selector for items after (to the right of) current */
+ol.journey li[aria-current] + li,
+ol.journey li[aria-current] + li ~ li {
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+}
+
+/* css for clipped numeric breadcrumbs */
+ol.by-index > li > * {
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  position: absolute;
+}
+ol.by-index > li::before {
+  border: 1px solid black;
+  border-radius: 50%;
+  content: attr(data-index);
+  display: inline-block;
+  height: 3rem;
+  line-height: 3rem;
+  padding: 0 0.5rem;
+  text-align: center;
+  width: 3rem;
+}
+ol.by-index > li > * {
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  position: absolute;
+  width: auto;
+}

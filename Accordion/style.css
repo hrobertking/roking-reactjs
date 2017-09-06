@@ -1,0 +1,24 @@
+.accordion > header {
+  cursor: pointer;
+}
+.accordion[aria-expanded="false"] > header::before {
+  content: '▶';
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 0;
+  margin-right: 0.5rem;
+  width: 1rem;
+}
+.accordion[aria-expanded="true"] > header::before {
+  content: '▼';
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 0;
+  margin-right: 0.5rem;
+  width: 1rem;
+}
+.accordion[aria-expanded="false"] > div {
+  height: 0;
+  overflow: hidden;
+}
+

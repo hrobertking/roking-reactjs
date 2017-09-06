@@ -1,0 +1,155 @@
+button.captions,
+button.forward,
+button.fullscreen,
+button.play,
+button.rewind,
+button.sound,
+.volumeknob,
+button.stop {
+  fill: transparent;
+  height: 3rem;
+  margin: 0 0.3125rem !important;
+  max-width: 3rem;
+  min-width: 3rem;
+  padding: 0;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.3rem;
+  width: 3rem;
+}
+button.captions:hover,
+button.forward:hover,
+button.fullscreen:hover,
+button.play:hover,
+button.rewind:hover,
+button.sound:hover,
+button.stop:hover {
+  fill: red;
+}
+
+button.captions:not([data-state]) .off,
+button.captions[data-state="0"] .off {
+  display: none;
+  fill: none;
+}
+button.captions[data-state="1"] .off {
+  display: initial;
+}
+
+button.fullscreen:not([data-state]) .on,
+button.fullscreen[data-state="1"] .on {
+  display: initial;
+}
+button.fullscreen:not([data-state]) .off,
+button.fullscreen[data-state="1"] .off {
+  display: none;
+  fill: none;
+}
+button.fullscreen[data-state="0"] .on {
+  display: none;
+  fill: none;
+}
+button.fullscreen[data-state="0"] .off {
+  display: initial;
+}
+
+button.play:not([data-state]) .on,
+button.play[data-state="1"] .on {
+  display: initial;
+}
+button.play:not([data-state]) .off,
+button.play[data-state="1"] .off {
+  display: none;
+  fill: none;
+}
+button.play[data-state="0"] .on {
+  display: none;
+  fill: none;
+}
+button.play[data-state="0"] .off {
+  display: initial;
+}
+
+button.sound:not([data-state]) .on,
+button.sound[data-state="1"] .on,
+button.sound svg:not([data-level="off"]) .on {
+  display: initial;
+}
+button.sound:not([data-state]) .off,
+button.sound[data-state="1"] .off,
+button.sound svg:not([data-level="off"]) .off {
+  display: none;
+  fill: none;
+}
+button.sound[data-state="0"] .on,
+button.sound svg[data-level="off"] .on {
+  display: none;
+  fill: none;
+}
+button.sound[data-state="0"] .off,
+button.sound svg[data-level="off"] .off {
+  display: initial;
+}
+button.sound svg[data-level="off"] .soft,
+button.sound svg[data-level="off"] .medium,
+button.sound svg[data-level="off"] .loud,
+button.sound svg[data-level="soft"] .medium,
+button.sound svg[data-level="soft"] .loud,
+button.sound svg[data-level="medium"] .loud {
+  display: none;
+  fill: none;
+}
+
+.caption {
+  display: none;
+}
+.caption[data-state="1"] {
+  display: block;
+}
+
+[role="slider"]  {
+  background-color: rgb(221, 221, 221);
+  border-bottom: 1px solid rgb(136, 136, 136);
+  border-left: 1px solid rgb(102, 102, 102);
+  border-radius: 50%;
+  border-right: 1px solid rgb(136, 136, 136);
+  border-top: 1px solid rgb(102, 102, 102);
+}
+[role="slider"]:active, 
+[role="slider"]:focus, 
+[role="slider"]:hover {
+  background-color: rgb(221, 238, 255);
+  border: 2px solid rgb(136, 136, 136);
+  box-shadow: inset 0 0 1rem rgb(136, 136, 136);
+  outline: none;
+}
+
+.timeindicator .channel {
+  border-radius: 0.3rem;
+  box-shadow: inset 0 0 0.5rem rgb(0, 0, 0);
+}
+.timeindicator .fill {
+  background: linear-gradient(to bottom, rgba(204, 204, 204, 1), rgba(204, 204, 204, 0));
+  border-radius: 0.3rem;
+}
+.timeindicator [role="slider"]  {
+  height: 3rem;
+  width: 3rem;
+}
+
+.volumeknob {
+  margin-bottom: -3rem !important;
+  top: -3.2rem;
+  z-index: 1;
+}
+.volumeknob .rail .channel,
+.volumeknob .rail .fill {
+  border-radius: 1rem;
+}
+.volumeknob .rail .channel {
+  background: rgb(255, 255, 255);
+}
+.volumeknob .rail .fill {
+  background: red;
+}
